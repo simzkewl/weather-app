@@ -1,0 +1,17 @@
+version: '3.1'
+services:
+  mongo:
+    image: mongo
+    container_name:  mongo
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: web_appPassword
+    ports: 
+      - 27017:27017
+  
+  weather: 
+    image: weather-app
+    container_name: weather-app
+    ports:
+      - 80:5000
